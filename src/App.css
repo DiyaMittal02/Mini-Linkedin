@@ -1,38 +1,349 @@
-.App {
-  text-align: center;
+body {
+  background: #f3f2ef;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.linkedin-layout {
+  display: grid;
+  grid-template-columns: 320px 1.2fr 340px;
+  gap: 2rem;
+  max-width: 1180px;
+  margin: 2rem auto;
+  align-items: flex-start;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.sidebar-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Card look */
+.card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.09);
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Profile Card */
+.profile-card {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.avatar {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background: #e5f0fb;
+  color: #0a66c2;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 2.3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.profile-info {
+  width: 100%;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.profile-item {
+  margin-bottom: 0.68rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.43rem;
+}
+
+.label {
+  font-weight: 600;
+  color: #535454;
+  min-width: 56px;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.value {
+  color: #222f3e;
+}
+
+.profile-bio {
+  font-size: 0.98rem;
+  color: #586d7c;
+  font-style: italic;
+  margin-top: 0.7rem;
+}
+
+.stats-card .stat-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #53565a;
+}
+
+.stats-card .stat-label {
+  font-weight: 500;
+  color: #53565a;
+}
+
+.stats-card .stat-value {
+  font-weight: 700;
+  color: #0a66c2;
+}
+
+/* Links Card */
+.links-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.links-card a {
+  text-decoration: none;
+  color: #0a66c2;
+  font-weight: 500;
+  transition: background 0.14s;
+  padding: 0.18rem 0.28rem;
+  border-radius: 4px;
+}
+
+.links-card a:hover {
+  background: #e5f0fb;
+}
+
+/* Feed Section */
+.main-feed {
+  min-width: 0;
+  width: 100%;
+}
+
+.post-form-container {
+  margin-bottom: 1.1rem;
+}
+
+.post-list {
+  margin-top: 1.5rem;
+}
+
+.post-card {
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
+.avatar-sm {
+  background: #e5f0fb;
+  color: #0a66c2;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  width: 39px;
+  height: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.author {
+  color: #0a66c2;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.08rem;
+}
+
+.author:hover {
+  text-decoration: underline;
+}
+
+.created-at {
+  color: #959595;
+  font-size: 0.95rem;
+}
+
+.post-content {
+  font-size: 1.13rem;
+  color: #262626;
+  line-height: 1.6;
+  margin-bottom: 0.2rem;
+}
+
+/* News/Side Panel */
+.side-panel {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.55rem 1.1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.09);
+  min-width: 270px;
+}
+
+.side-panel-title {
+  font-weight: 700;
+  font-size: 1.11rem;
+  color: #0a66c2;
+  margin-bottom: 1.2rem;
+}
+
+.side-panel ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.side-panel ul li {
+  margin-bottom: 1.05rem;
+  font-size: 1rem;
+  color: #19222a;
+}
+
+.side-panel ul li span {
+  color: #8592a6;
+  font-size: 0.95em;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 1100px) {
+  .linkedin-layout {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
-  to {
-    transform: rotate(360deg);
+
+  .sidebar-left,
+  .side-panel {
+    display: none;
   }
+
+  .main-feed {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .linkedin-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    min-height: 56px;
+    border-bottom: 1.2px solid #ebebeb;
+    padding: 0 1.9rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+  }
+
+  .linkedin-logo {
+    border-radius: 7px;
+  }
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background: #eef3f8;
+    padding: 0 1.1rem;
+    border-radius: 7px;
+    height: 38px;
+    min-width: 250px;
+  }
+
+  .search-bar input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1.05rem;
+    color: #222;
+    flex: 1;
+    padding: 0.2rem;
+  }
+
+  .search-icon {
+    margin-right: 0.65rem;
+    font-size: 1.08rem;
+    color: #6d7885;
+  }
+
+  .navbar-center,
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 1.55rem;
+  }
+
+  .icon-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #585757;
+    text-decoration: none;
+    font-size: 1.1rem;
+    position: relative;
+    min-width: 60px;
+  }
+
+  .icon-link:hover,
+  .icon-link.active {
+    color: #151515;
+  }
+
+  .icon {
+    font-size: 1.37rem;
+    margin-bottom: 1px;
+  }
+
+  .icon-label {
+    font-size: 0.94rem;
+    margin-top: 2px;
+  }
+
+  .badge {
+    position: absolute;
+    right: 17px;
+    top: 0;
+    background: #e60023;
+    color: #fff;
+    border-radius: 15px;
+    min-width: 19px;
+    min-height: 19px;
+    font-size: 0.86rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6px;
+    font-weight: bold;
+  }
+
+  @media (max-width: 900px) {
+    .search-bar {
+      min-width: 120px;
+    }
+
+    .icon-link {
+      min-width: 44px;
+    }
+
+    .navbar-center,
+    .navbar-right {
+      gap: 1rem;
+    }
+  }
+
 }

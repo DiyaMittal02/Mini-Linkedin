@@ -1,0 +1,109 @@
+.linkedin-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    min-height: 56px;
+    border-bottom: 1.2px solid #ebebeb;
+    padding: 0 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+}
+
+.linkedin-logo {
+    border-radius: 7px;
+    width: 34px;
+    height: 34px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: #eef3f8;
+    border-radius: 7px;
+    height: 38px;
+    min-width: 230px;
+    padding: 0 1rem;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1.06rem;
+    color: #222;
+    flex: 1;
+}
+
+.icon-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #585757;
+    text-decoration: none;
+    font-size: 1.1rem;
+    position: relative;
+    min-width: 60px;
+    margin-top: 2px;
+}
+
+.icon-link:hover,
+.icon-link.active {
+    color: #151515;
+}
+
+.icon {
+    font-size: 1.37rem;
+    margin-bottom: 1px;
+}
+
+.icon-label {
+    font-size: 0.94rem;
+    margin-top: 2px;
+}
+
+.badge {
+    position: absolute;
+    right: 17px;
+    top: 0;
+    background: #e60023;
+    color: #fff;
+    border-radius: 15px;
+    min-width: 19px;
+    min-height: 19px;
+    font-size: 0.86rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6px;
+    font-weight: bold;
+}
+
+.navbar-center,
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 1.55rem;
+}
+
+@media (max-width: 900px) {
+    .search-bar {
+        min-width: 120px;
+    }
+
+    .icon-link {
+        min-width: 44px;
+    }
+
+    .navbar-center,
+    .navbar-right {
+        gap: 1rem;
+    }
+}
